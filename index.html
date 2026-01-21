@@ -7,560 +7,524 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; color: #333; }
-        .header { background-color: #007bff; color: white; padding: 30px 15px; text-align: center; }
-        .carousel-item img { height: 350px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .price { font-size: 1.4em; font-weight: bold; color: #28a745; }
-        .out-of-stock { color: #dc3545; font-weight: bold; font-size: 1.2em; }
-        .product-title { font-size: 1.8em; margin-bottom: 10px; }
-        .container { max-width: 1100px; }
-        .carousel-inner { transition: transform 0.6s ease-in-out; }
-        .carousel-indicators [data-bs-target] { background-color: #007bff; }
-        @media (max-width: 768px) {
-            .carousel-item img { height: 220px; }
-            .product-title { font-size: 1.5em; }
-            .price { font-size: 1.3em; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: #f5f5dc; /* Beige background */
+            color: #333; 
+        }
+        .header { 
+            background-color: #007bff; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .logo { 
+            max-width: 200px; 
+            margin-bottom: 15px; 
+        }
+        .container { 
+            max-width: 1200px; 
+        }
+        .product-card { 
+            background: rgba(255, 255, 255, 0.6); /* Semi-transparent white for glass */
+            backdrop-filter: blur(10px); /* Glass blur effect */
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 15px; 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* 3D shadow */
+            overflow: hidden; 
+            transition: transform 0.3s ease; /* Smooth hover */
+        }
+        .product-card:hover { 
+            transform: translateY(-5px); /* 3D lift on hover */
+        }
+        .product-card img { 
+            height: 250px; 
+            object-fit: cover; 
+            width: 100%; 
+        }
+        .price { 
+            font-size: 1.4em; 
+            font-weight: bold; 
+            color: #28a745; 
+        }
+        .out-of-stock { 
+            color: #dc3545; 
+            font-weight: bold; 
+        }
+        @media (max-width: 768px) { 
+            .product-card img { height: 200px; } 
         }
     </style>
 </head>
 <body>
     <header class="header">
+        <img src="images/logo1.png" alt="Seafood Kings Logo" class="logo">
         <h1>Seafood Kings Wholesale</h1>
         <p>Fresh Premium Seafood at Bulk Rates | Mumbai | Min Order: 50kg (or product specific) | Contact: +91-XXXXXXXXXX | Email: wholesale@seafoodkings.in</p>
     </header>
 
     <div class="container my-5">
-        <h2 class="text-center mb-4">Our Complete Wholesale Range (36 Products)</h2>
+        <h2 class="text-center mb-4">Our Wholesale Seafood Range</h2>
         <p class="text-center mb-5">Prices per kg (unless pcs mentioned) | Subject to market fluctuation | In-stock items available for immediate bulk orders</p>
 
-        <div id="productCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <!-- Indicators for navigation dots, optional but helpful for many slides -->
-                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
-                <!-- You can add more manually if you want, but Bootstrap auto-handles up to ~20 well -->
+        <div class="row g-4">
+            <!-- Product 1: Prawns 10/12 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/prawns1.png" alt="Prawns 10/12 pcs">
+                    <div class="p-3">
+                        <h5>Prawns 10/12 pcs</h5>
+                        <p class="price">₹1000 / kg</p>
+                        <p>Premium large prawns for special dishes.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="carousel-inner">
-
-                <!-- 1 -->
-                <div class="carousel-item active">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/prawns1.png" alt="Prawns 10/12 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Prawns 10/12 pcs</h3>
-                            <p class="price">₹1000 / kg</p>
-                            <p>Premium large prawns for special dishes.</p>
-                        </div>
+            <!-- Product 2: Prawns 15/18 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/prawns4.png" alt="Prawns 15/18 pcs">
+                    <div class="p-3">
+                        <h5>Prawns 15/18 pcs</h5>
+                        <p class="price">₹850 / kg</p>
+                        <p>Medium-large fresh prawns.</p>
                     </div>
                 </div>
-
-                <!-- 2 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/prawns4.png" alt="Prawns 15/18 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Prawns 15/18 pcs</h3>
-                            <p class="price">₹850 / kg</p>
-                            <p>Medium-large fresh prawns.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/prawns3.png" alt="Prawns 25/30 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Prawns 25/30 pcs</h3>
-                            <p class="price">₹700 / kg</p>
-                            <p>Standard size, great for bulk.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/prawns.png" alt="Prawns 35/40 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Prawns 35/40 pcs</h3>
-                            <p class="price">₹600 / kg</p>
-                            <p>Smaller prawns, excellent value.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/prawns2.png" alt="Prawns 50/55 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Prawns 50/55 pcs</h3>
-                            <p class="price">₹550 / kg</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/pomfret3.png" alt="Pomfret 4/5 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Pomfret 4/5 pcs</h3>
-                            <p class="price">₹1200 / kg</p>
-                            <p>Premium white pomfret.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/pomfret1.png" alt="Pomfret 3 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Pomfret 3 pcs</h3>
-                            <p class="price">₹1300 / kg</p>
-                            <p>Larger premium pomfret.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/pomfret2.png" alt="Pomfret 2 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Pomfret 2 pcs</h3>
-                            <p class="price">₹1600 / kg</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/surmai1.png" alt="Surmai Small" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Surmai Small</h3>
-                            <p class="price">₹700 / kg</p>
-                            <p>Fresh small kingfish.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/surmai2.png" alt="Surmai Big" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Surmai Big</h3>
-                            <p class="price">₹900 / kg</p>
-                            <p>Large fresh surmai.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Continue similarly for all remaining... -->
-
-                <!-- 11 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/surmai3.png" alt="Surmai Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Surmai Fillet Boneless</h3>
-                            <p class="price">₹1500 / kg</p>
-                            <p>Boneless premium fillets.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 12 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/rawas1.png" alt="Rawas Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Rawas Slices</h3>
-                            <p class="price">₹800 / kg</p>
-                            <p>Fresh rawas slices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 13 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/rawas2.png" alt="Rawas Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Rawas Fillet Boneless</h3>
-                            <p class="price">₹1600 / kg</p>
-                            <p>Boneless rawas fillets.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 14 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/halwa1.png" alt="Halwa Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Halwa Slices</h3>
-                            <p class="price">₹800 / kg</p>
-                            <p>Fresh halwa slices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 15 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/hamoor1.png" alt="Hamoor Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Hamoor Slices</h3>
-                            <p class="price">₹700 / kg</p>
-                            <p>Fresh hamoor slices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 16 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/dara1.png" alt="Dara Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Dara Slices</h3>
-                            <p class="price">₹800 / kg</p>
-                            <p>Fresh dara slices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 17 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/dara2.png" alt="Dara Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Dara Fillet Boneless</h3>
-                            <p class="price">₹1600 / kg</p>
-                            <p>Boneless dara fillets.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 18 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/seabass1.png" alt="Sea Bass Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Sea Bass Slices</h3>
-                            <p class="price">₹700 / kg</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 19 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/seabass2.png" alt="Sea Bass Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Sea Bass Fillet Boneless</h3>
-                            <p class="price">₹1500 / kg</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 20 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/redsnapper1.png" alt="Red Snapper Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Red Snapper Slices</h3>
-                            <p class="price">₹700 / kg</p>
-                            <p>Fresh red snapper slices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 21 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/redsnapper2.png" alt="Red Snapper Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Red Snapper Fillet Boneless</h3>
-                            <p class="price">₹1400 / kg</p>
-                            <p>Boneless red snapper fillets.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 22 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/koti.png" alt="Koti Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Koti Fillet Boneless</h3>
-                            <p class="price">₹1000 / kg</p>
-                            <p>Boneless koti fillets.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 23 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/mahimahi1.png" alt="Mahi-Mahi Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Mahi-Mahi Slices</h3>
-                            <p class="price">₹400 / kg</p>
-                            <p>Fresh mahi-mahi slices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 24 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/mahimahi2.png" alt="Mahi-Mahi Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Mahi-Mahi Fillet Boneless</h3>
-                            <p class="price">₹700 / kg</p>
-                            <p>Boneless mahi-mahi fillets.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 25 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/ghol1.png" alt="Ghol Fish Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Ghol Fish Slices</h3>
-                            <p class="price">₹700 / kg</p>
-                            <p>Fresh ghol slices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 26 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/ghol2.png" alt="Ghol Fish Fillet Boneless" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Ghol Fish Fillet Boneless</h3>
-                            <p class="price">₹1400 / kg</p>
-                            <p>Boneless ghol fillets.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 27 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/tuna1.png" alt="Tuna Slices" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Tuna Slices</h3>
-                            <p class="price">₹450 / kg</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 28 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/tuna2.png" alt="Tuna Fillet" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Tuna Fillet</h3>
-                            <p class="price">₹850 / kg</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 29 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/bombil.png" alt="Bombil (Bombay Duck)" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Bombil (Bombay Duck)</h3>
-                            <p class="price">₹350 / kg</p>
-                            <p>Fresh bombay duck.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 30 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/mackarel.png" alt="Mackerel (Bangda)" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Mackerel (Bangda)</h3>
-                            <p class="price">₹350 / kg</p>
-                            <p>Fresh bangda mackerel.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 31 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/squid.png" alt="Squid" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Squid</h3>
-                            <p class="price">₹500 / kg</p>
-                            <p>Fresh squid.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 32 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/lobster.png" alt="Lobster 1 piece" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Lobster 1 piece</h3>
-                            <p class="price">₹2600 / piece</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 33 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/lobster2.png" alt="Lobster 2 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Lobster 2 pcs</h3>
-                            <p class="price">₹2400 / piece</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 34 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/lobster3.png" alt="Lobster 3 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Lobster 3 pcs</h3>
-                            <p class="price">₹1900 / piece</p>
-                            <p class="out-of-stock">Out of Stock</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 35 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/lobster4.png" alt="Lobster 4 pcs" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Lobster 4 pcs</h3>
-                            <p class="price">₹1400 / piece</p>
-                            <p>Fresh lobster pack.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 36 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <img src="images/crab.png" alt="Crab 3–4 medium" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 p-4">
-                            <h3 class="product-title">Crab 3–4 medium</h3>
-                            <p class="price">₹900 / pack</p>
-                            <p>Medium fresh crabs.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Extra ones if needed, but 36 done -->
-
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Product 3: Prawns 25/30 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/prawns3.png" alt="Prawns 25/30 pcs">
+                    <div class="p-3">
+                        <h5>Prawns 25/30 pcs</h5>
+                        <p class="price">₹700 / kg</p>
+                        <p>Standard size, great for bulk.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Prawns 35/40 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/prawns.png" alt="Prawns 35/40 pcs">
+                    <div class="p-3">
+                        <h5>Prawns 35/40 pcs</h5>
+                        <p class="price">₹600 / kg</p>
+                        <p>Smaller prawns, excellent value.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Prawns 50/55 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/prawns2.png" alt="Prawns 50/55 pcs">
+                    <div class="p-3">
+                        <h5>Prawns 50/55 pcs</h5>
+                        <p class="price">₹550 / kg</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6: Pomfret 4/5 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/pomfret3.png" alt="Pomfret 4/5 pcs">
+                    <div class="p-3">
+                        <h5>Pomfret 4/5 pcs</h5>
+                        <p class="price">₹1200 / kg</p>
+                        <p>Premium white pomfret.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- And so on for all remaining products... Follow the same pattern -->
+            <!-- Product 7: Pomfret 3 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/pomfret1.png" alt="Pomfret 3 pcs">
+                    <div class="p-3">
+                        <h5>Pomfret 3 pcs</h5>
+                        <p class="price">₹1300 / kg</p>
+                        <p>Larger premium pomfret.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8: Pomfret 2 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/pomfret2.png" alt="Pomfret 2 pcs">
+                    <div class="p-3">
+                        <h5>Pomfret 2 pcs</h5>
+                        <p class="price">₹1600 / kg</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 9: Surmai Small -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/surmai1.png" alt="Surmai Small">
+                    <div class="p-3">
+                        <h5>Surmai Small</h5>
+                        <p class="price">₹700 / kg</p>
+                        <p>Fresh small kingfish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 10: Surmai Big -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/surmai2.png" alt="Surmai Big">
+                    <div class="p-3">
+                        <h5>Surmai Big</h5>
+                        <p class="price">₹900 / kg</p>
+                        <p>Large fresh surmai.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 11: Surmai Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/surmai3.png" alt="Surmai Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Surmai Fillet Boneless</h5>
+                        <p class="price">₹1500 / kg</p>
+                        <p>Boneless premium fillets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 12: Rawas Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/rawas1.png" alt="Rawas Slices">
+                    <div class="p-3">
+                        <h5>Rawas Slices</h5>
+                        <p class="price">₹800 / kg</p>
+                        <p>Fresh rawas slices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 13: Rawas Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/rawas2.png" alt="Rawas Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Rawas Fillet Boneless</h5>
+                        <p class="price">₹1600 / kg</p>
+                        <p>Boneless rawas fillets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 14: Halwa Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/halwa1.png" alt="Halwa Slices">
+                    <div class="p-3">
+                        <h5>Halwa Slices</h5>
+                        <p class="price">₹800 / kg</p>
+                        <p>Fresh halwa slices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 15: Hamoor Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/hamoor1.png" alt="Hamoor Slices">
+                    <div class="p-3">
+                        <h5>Hamoor Slices</h5>
+                        <p class="price">₹700 / kg</p>
+                        <p>Fresh hamoor slices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 16: Dara Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/dara1.png" alt="Dara Slices">
+                    <div class="p-3">
+                        <h5>Dara Slices</h5>
+                        <p class="price">₹800 / kg</p>
+                        <p>Fresh dara slices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 17: Dara Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/dara2.png" alt="Dara Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Dara Fillet Boneless</h5>
+                        <p class="price">₹1600 / kg</p>
+                        <p>Boneless dara fillets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 18: Sea Bass Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/seabass1.png" alt="Sea Bass Slices">
+                    <div class="p-3">
+                        <h5>Sea Bass Slices</h5>
+                        <p class="price">₹700 / kg</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 19: Sea Bass Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/seabass2.png" alt="Sea Bass Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Sea Bass Fillet Boneless</h5>
+                        <p class="price">₹1500 / kg</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 20: Red Snapper Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/redsnapper1.png" alt="Red Snapper Slices">
+                    <div class="p-3">
+                        <h5>Red Snapper Slices</h5>
+                        <p class="price">₹700 / kg</p>
+                        <p>Fresh red snapper slices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 21: Red Snapper Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/redsnapper2.png" alt="Red Snapper Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Red Snapper Fillet Boneless</h5>
+                        <p class="price">₹1400 / kg</p>
+                        <p>Boneless red snapper fillets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 22: Koti Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/koti.png" alt="Koti Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Koti Fillet Boneless</h5>
+                        <p class="price">₹1000 / kg</p>
+                        <p>Boneless koti fillets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 23: Mahi-Mahi Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/mahimahi1.png" alt="Mahi-Mahi Slices">
+                    <div class="p-3">
+                        <h5>Mahi-Mahi Slices</h5>
+                        <p class="price">₹400 / kg</p>
+                        <p>Fresh mahi-mahi slices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 24: Mahi-Mahi Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/mahimahi2.png" alt="Mahi-Mahi Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Mahi-Mahi Fillet Boneless</h5>
+                        <p class="price">₹700 / kg</p>
+                        <p>Boneless mahi-mahi fillets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 25: Ghol Fish Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/ghol1.png" alt="Ghol Fish Slices">
+                    <div class="p-3">
+                        <h5>Ghol Fish Slices</h5>
+                        <p class="price">₹700 / kg</p>
+                        <p>Fresh ghol slices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 26: Ghol Fish Fillet Boneless -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/ghol2.png" alt="Ghol Fish Fillet Boneless">
+                    <div class="p-3">
+                        <h5>Ghol Fish Fillet Boneless</h5>
+                        <p class="price">₹1400 / kg</p>
+                        <p>Boneless ghol fillets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 27: Tuna Slices -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/tuna1.png" alt="Tuna Slices">
+                    <div class="p-3">
+                        <h5>Tuna Slices</h5>
+                        <p class="price">₹450 / kg</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 28: Tuna Fillet -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/tuna2.png" alt="Tuna Fillet">
+                    <div class="p-3">
+                        <h5>Tuna Fillet</h5>
+                        <p class="price">₹850 / kg</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 29: Bombil (Bombay Duck) -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/bombil.png" alt="Bombil (Bombay Duck)">
+                    <div class="p-3">
+                        <h5>Bombil (Bombay Duck)</h5>
+                        <p class="price">₹350 / kg</p>
+                        <p>Fresh bombay duck.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 30: Mackerel (Bangda) -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/mackarel.png" alt="Mackerel (Bangda)">
+                    <div class="p-3">
+                        <h5>Mackerel (Bangda)</h5>
+                        <p class="price">₹350 / kg</p>
+                        <p>Fresh bangda mackerel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 31: Squid -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/squid.png" alt="Squid">
+                    <div class="p-3">
+                        <h5>Squid</h5>
+                        <p class="price">₹500 / kg</p>
+                        <p>Fresh squid.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 32: Lobster 1 piece -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/lobster.png" alt="Lobster 1 piece">
+                    <div class="p-3">
+                        <h5>Lobster 1 piece</h5>
+                        <p class="price">₹2600 / piece</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 33: Lobster 2 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/lobster2.png" alt="Lobster 2 pcs">
+                    <div class="p-3">
+                        <h5>Lobster 2 pcs</h5>
+                        <p class="price">₹2400 / piece</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 34: Lobster 3 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/lobster3.png" alt="Lobster 3 pcs">
+                    <div class="p-3">
+                        <h5>Lobster 3 pcs</h5>
+                        <p class="price">₹1900 / piece</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 35: Lobster 4 pcs -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/lobster4.png" alt="Lobster 4 pcs">
+                    <div class="p-3">
+                        <h5>Lobster 4 pcs</h5>
+                        <p class="price">₹1400 / piece</p>
+                        <p>Fresh lobster pack.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 36: Crab 3–4 medium -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/crab.png" alt="Crab 3–4 medium">
+                    <div class="p-3">
+                        <h5>Crab 3–4 medium</h5>
+                        <p class="price">₹900 / pack</p>
+                        <p>Medium fresh crabs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 37: Crab 2 large (from list, added if needed, but your list has 37? Wait, original had 37 including crab2 and crab4 -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/crab2.png" alt="Crab 2 large">
+                    <div class="p-3">
+                        <h5>Crab 2 large</h5>
+                        <p class="price">₹1300 / pack</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 38: Crab 1 XL -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/crab4.png" alt="Crab 1 XL">
+                    <div class="p-3">
+                        <h5>Crab 1 XL</h5>
+                        <p class="price">₹2000 / piece</p>
+                        <p class="out-of-stock">Out of Stock</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
